@@ -1,66 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volume of a Sphere</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin-top: 50px;
-            text-align: center;
-        }
-        .form-container {
-            margin-bottom: 20px;
-        }
-        input[type="number"] {
-            padding: 10px;
-            font-size: 1rem;
-            width: 200px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        #volumeOutput {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-    </style>
+	<meta charset="utf-8">
+<title>Volume of a Sphere</title>
+<style> 
+body{padding-top:30px;}
+label,input{display:block;} 
+</style>
 </head>
 <body>
-
-    <div class="form-container">
-        <h2>Calculate the Volume of a Sphere</h2>
-        <label for="radius">Radius:</label>
-        <input type="number" id="radius" name="radius" placeholder="Enter radius" />
-        <button onclick="volume_sphere()">Calculate</button>
-    </div>
-
-    <div id="volumeOutput">Volume: </div>
-
-    <script>
-        function volume_sphere() {
-            // Get the value of the radius input
-            const radiusInput = document.getElementById('radius').value;
-
-            // Convert the input value to a number
-            const radius = parseFloat(radiusInput);
-
-            // Validate if the radius is a valid number and non-negative
-            if (isNaN(radius) || radius < 0) {
-                document.getElementById('volumeOutput').textContent = 'Volume: NaN';
-            } else {
-                // Calculate the volume of the sphere using the formula
-                const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
-
-                // Display the calculated volume, rounded to 4 decimal places
-                document.getElementById('volumeOutput').textContent = `Volume: ${volume.toFixed(4)}`;
-            }
-        }
-    </script>
-
+	<p>Input radius value and get the volume of a sphere.</p>
+	<form action="" method="post" id="MyForm">
+	<label for="radius">Radius</label><input type="text" name="radius" id="radius" required>
+	<label for="volume">Volume</label><input type="text" name="volume" id="volume">
+	<input type="submit" value="Calculate" id="submit">    </form>
+	<script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
